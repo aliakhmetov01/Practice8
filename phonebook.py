@@ -47,7 +47,6 @@ def advanced_search():
         print("Ничего не найдено.")
 
 def paginated_navigation():
-    """Реализация пункта 3.2.4: навигация next/prev/quit"""
     limit = 5
     offset = 0
     while True:
@@ -69,7 +68,6 @@ def paginated_navigation():
 
 
 def export_to_json():
-    """Пункт 3.3.1: Экспорт всех контактов в JSON"""
     rows = run_db_query("SELECT * FROM contacts", fetch_results=True)
     contacts = []
     for r in rows:
@@ -80,7 +78,6 @@ def export_to_json():
     print("Данные успешно экспортированы в contacts.json")
 
 def import_from_json():
-    """Пункт 3.3.2: Импорт из JSON с проверкой дубликатов"""
     try:
         with open("contacts.json", "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -128,13 +125,13 @@ def delete_flexible():
 
 if __name__ == '__main__':
     while True:
-        print("\n--- PhoneBook Advanced ---")
-        print("1. Поиск контактов (простой)")
+        print("\n--- PhoneBook ---")
+        print("1. Поиск контактов")
         print("2. Добавить/Обновить")
         print("3. Импорт из CSV")
-        print("4. Навигация (Next/Prev)")
+        print("4. Навигация")
         print("5. Удалить")
-        print("6. Расширенный поиск (Filter/Sort)")
+        print("6. Расширенный поиск")
         print("7. Экспорт в JSON")
         print("8. Импорт из JSON")
         print("0. Выход")
