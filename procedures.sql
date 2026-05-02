@@ -1,4 +1,3 @@
--- A procedure to insert a new user by name and phone
 CREATE OR REPLACE PROCEDURE upsert_contact(p_name TEXT, p_phone TEXT)
 AS $$
 BEGIN
@@ -9,7 +8,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- A procedure to insert many new users from a list of names and phones
 CREATE OR REPLACE PROCEDURE bulk_insert_with_validation(
     p_names TEXT[], 
     p_phones TEXT[],
@@ -31,7 +29,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- A procedure to delete data from the table by username or phone
 CREATE OR REPLACE PROCEDURE delete_contact_flexible(p_identifier TEXT)
 AS $$
 BEGIN

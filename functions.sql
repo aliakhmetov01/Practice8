@@ -1,4 +1,3 @@
--- A function that returns all records matching a pattern
 CREATE OR REPLACE FUNCTION search_contacts_by_pattern(search_pattern TEXT)
 RETURNS TABLE (id INT, name VARCHAR, phone VARCHAR) AS $$
 BEGIN
@@ -10,7 +9,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- A function that queries data from the table with pagination
 CREATE OR REPLACE FUNCTION get_contacts_paged(p_limit INT, p_offset INT)
 RETURNS TABLE (id INT, name VARCHAR, phone VARCHAR) AS $$
 BEGIN
