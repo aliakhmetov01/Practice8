@@ -49,12 +49,10 @@ def upsert_user():
 
 
 def load_from_csv(filepath):
-    """Читает CSV и отправляет данные в процедуру массовой вставки"""
     names = []
     phones = []
     
     try:
-        # 1. Читаем данные из файла в списки
         with open(filepath, mode='r', encoding='utf-8') as file:
             reader = csv.reader(file)
             for row in reader:
